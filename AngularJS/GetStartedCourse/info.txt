@@ -1,0 +1,2 @@
+Pluralsight course: https://app.pluralsight.com/library/courses/angularjs-get-started
+Part of: https://app.pluralsight.com/paths/skills/angular-js

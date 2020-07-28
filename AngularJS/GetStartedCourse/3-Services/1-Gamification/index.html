@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="githubViewer">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <!-- 1.8.0 nema više globalno definiranog pa radi-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="style.css" rel="stylesheet">
+  <script src="script.js"></script>
+</head>
+
+<body ng-controller="MainController">
+  <h1> {{message}} </h1>
+  <div> {{error}} </div>
+  <div>{{countdown}}</div>
+  <form name="searchUser" ng-submit="search(username)">
+    <input type="search" required placeholder="Username to find" ng-model="username">
+    <!--  ng-model -> two way binding -> direktno stvara username unutar $scope ako ga nema -->
+    <!-- <input type="submit" value="Search" ng-click="search(username)"> // handle click event--> 
+    <input type="submit" value="Search"> 
+  </form>
+
+ <div ng-include="'userdetails.html'" ng-show="user"></div>
+
+
+</body>
+
+</html>

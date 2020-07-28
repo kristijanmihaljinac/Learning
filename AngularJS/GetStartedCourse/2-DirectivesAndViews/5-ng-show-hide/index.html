@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="githubViewer">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <!-- 1.8.0 nema više globalno definiranog pa radi-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="style.css" rel="stylesheet">
+  <script src="script.js"></script>
+</head>
+
+<body ng-controller="MainController">
+  <h1> {{message}} </h1>
+  <div> {{error}} </div>
+
+  <form name="searchUser" ng-submit="search(username)">
+    <input type="search" required placeholder="Username to find" ng-model="username">
+    <!--  ng-model -> two way binding -> direktno stvara username unutar $scope ako ga nema -->
+    <!-- <input type="submit" value="Search" ng-click="search(username)"> // handle click event--> 
+    <input type="submit" value="Search"> 
+  </form>
+
+  <div ng-show="user"> <!-- user must be truthy-->
+    <h2>{{user.name}}</h2>
+    <img ng-src="{{user.avatar_url}}" title="{{user.name}}">
+    Order: 
+    <select ng-model="repoSortOrder">
+      <option value="+name">Name ASC</option>
+      <option value="-name">Name DESC</option>
+      <option value="+stargazers_count">Stars ASC</option>
+      <option value="-stargazers_count">Stars DESC</option>
+      <option value="+language">Language ASC</option>
+      <option value="-language">Language DESC</option>
+    </select>
+  </div>
+
+
+
+  <table ng-show="user">
+    <thead>
+        <tr>
+          <th>Name</th>
+          <th>Stars</th>
+          <th>Language</th>
+        </tr>
+    </thead>
+    <tbody>
+      <!-- <tr ng-repeat="repo in repos | orderBy:'-stargazers_count'"> // hardcodirani naziv propertya po kojem da se sortira-->
+        <tr ng-repeat="repo in repos | orderBy:repoSortOrder"> <!-- ovako gleda varijablu repoSortOrder u $scope -->
+        <td>{{repo.name}}</td>
+        <td>{{repo.stargazers_count | number}}</td> <!-- ovo je pipe | odnosno filter -> pipe into filter !--> 
+        <td>{{repo.language}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</body>
+
+</html>
