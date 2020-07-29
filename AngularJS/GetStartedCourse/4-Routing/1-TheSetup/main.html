@@ -1,0 +1,9 @@
+<div>
+    <div>{{countdown}}</div>
+    <form name="searchUser" ng-submit="search(username)">
+        <input type="search" required placeholder="Username to find" ng-model="username">
+        <!--  ng-model -> two way binding -> direktno stvara username unutar $scope ako ga nema -->
+        <!-- <input type="submit" value="Search" ng-click="search(username)"> // handle click event-->
+        <input type="submit" value="Search">
+    </form>
+</div>

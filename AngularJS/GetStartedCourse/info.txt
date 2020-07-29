@@ -1,2 +1,5 @@
 Pluralsight course: https://app.pluralsight.com/library/courses/angularjs-get-started
 Part of: https://app.pluralsight.com/paths/skills/angular-js
+
+Opis:
+Cijeli tutorial sam radio lokalno koristeći VS Code. Za pokretanje sam koristio: npx http-server -0
