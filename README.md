@@ -1,2 +1,2 @@
 # Learning
-Learning repo
+An educational repository with materials I have studied.
