@@ -28,11 +28,11 @@
         <!-- <tr ng-repeat="repo in repos | orderBy:'-stargazers_count'"> // hardcodirani naziv propertya po kojem da se sortira-->
         <tr ng-repeat="repo in repos | orderBy:repoSortOrder">
             <!-- ovako gleda varijablu repoSortOrder u $scope -->
-            <td>{{repo.name}}</td>
+            <td><a href="#!/repo/{{user.login}}/{{repo.name}}">{{repo.name}}</a></td> 
             <td>{{repo.stargazers_count | number}}</td> <!-- ovo je pipe | odnosno filter -> pipe into filter !-->
             <td>{{repo.language}}</td>
         </tr>
     </tbody>
 </table>
 
-<a href="#/main">Back to seacrh</a>
+<a href="#!/main">Back to seacrh</a>

@@ -11,7 +11,7 @@
                 templateUrl: "user.html",
                 controller: "UserController"
             })
-            .when("/user/:username/:reponame", {
+            .when("/repo/:username/:reponame", {
                 templateUrl: "repo.html",
                 controller: "RepoController"
             })

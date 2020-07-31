@@ -9,6 +9,10 @@
     var UserController = function (
         $scope, github, $routeParams) {
 
+        var search = function(username, reponame){
+            $location.path("/repo/" + username  + "/" + reponame);
+        };
+
         var onRepos = function (data) {
             $scope.repos = data;
         };
@@ -19,6 +23,8 @@
             github.getRepos($scope.user)
                 .then(onRepos, onError);
         };
+
+
 
         //invoked on error, second parameter, optionally
         var onError = function (reason) {
