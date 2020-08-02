@@ -1,0 +1,2 @@
+Course: https://app.pluralsight.com/library/courses/javascript-getting-started/table-of-contents
+Part of: https://app.pluralsight.com/paths/skills/javascript-core-language
