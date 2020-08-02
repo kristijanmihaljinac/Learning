@@ -1,0 +1,60 @@
+﻿@model EasyBlog.Web.Models.BlogPostModel
+@{
+    var localStrings = DependencyResolver.Current.GetService<EasyBlog.Web.Core.ILocalStrings>();
+}
+@section scripts
+{
+    <script src="@Url.Content("~/App/ViewModels/PostViewModel.js")" type="text/javascript"></script>
+}
+@section ko_apply
+{
+    var blogPostId = @Model.BlogPostId;
+
+    var viewModel = new postViewModel(blogPostId);
+    ko.applyBindings(viewModel, $("#post")[0]);
+}
+<h2>@localStrings.PostTitle</h2>
+
+<div id="post">
+    <div class="panel panel-primary" data-bind="with: blogPost">
+        <h4 class="panel-heading"><span data-bind="text: PostSubject"></span></h4>
+        <div class="panel-body">
+            <div class="form-group" style="width: 100%">
+                <span data-bind="html: $root.webFriendly(PostBody())"></span>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <b>Comments:</b>
+            <div data-bind="foreach: Comments">
+                <br />
+                <div>
+                    <span data-bind="text: moment(Timestamp()).format('MM-DD-YYYY, h:mm a')"></span>
+                </div>
+                <div>
+                    <span data-bind="text: Name"></span>&nbsp;&nbsp;
+                    <span data-bind="text: Email" style="font-style: italic"></span>
+                </div>
+                <div>
+                    <span data-bind="html: $root.webFriendly(CommentBody())"></span>
+                </div>
+            </div>
+            <hr />
+            <b>New Comment</b>
+            <div>
+                <div class="form-group" style="width: 100%">
+                    <p class="control-label">Name</p>
+                    <p><input type="text" class="form-control" data-bind="value: $parent.name" /></p>
+                    <p class="control-label">Email</p>
+                    <p><input type="text" class="form-control" data-bind="value: $parent.email" /></p>
+                    <p class="control-label">Comment</p>
+                    <p><textarea rows="12" class="form-control" data-bind="value: $parent.comment"></textarea></p>
+                </div>
+                <div>
+                    <input type="button" class="btn btn-primary" value="Submit" data-bind="click: $parent.submit" />
+                    &nbsp;&nbsp;
+                    <span data-bind="text: $parent.message"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
