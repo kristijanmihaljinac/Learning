@@ -1,2 +1,9 @@
-Course: https://app.pluralsight.com/library/courses/javascript-getting-started/table-of-contents
-Part of: https://app.pluralsight.com/paths/skills/javascript-core-language
+Course: https://www.quackit.com/javascript/tutorial/
+
+Reserved words: https://www.quackit.com/javascript/javascript_reserved_words.cfm
+
+Event handlers: https://www.quackit.com/html/tags/html_5_event_handler_content_attributes.cfm
+
+Date time functions: https://www.quackit.com/javascript/javascript_date_and_time_functions.cfm
+
+Html tags: https://www.quackit.com/html/tags/

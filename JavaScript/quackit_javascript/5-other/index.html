@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS Starter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h3>Favorite Color</h3>
+  <label>
+    <input type="radio" name="fav_color" value="Blue" onclick="analyzeColor(this.value);"> Blue 
+  </label>
+  <label>
+    <input type="radio" name="fav_color" value="Red" onclick="analyzeColor(this.value);"> Red 
+  </label>
+  <label>
+    <input type="radio" name="fav_color" value="Green" onclick="analyzeColor(this.value);"> Green 
+  </label>
+  <label>
+    <input type="radio" name="fav_color" value="None" onclick="analyzeColor(this.value);"> None
+  </label>
+
+
+  <button onclick="writeDate()">Write date</button>
+  <div id="date"></div>
+</body>
+<script src="./script.js"></script>
+</html>
