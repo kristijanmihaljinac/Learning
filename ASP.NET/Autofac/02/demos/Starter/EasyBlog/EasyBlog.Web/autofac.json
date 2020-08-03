@@ -1,0 +1,37 @@
+﻿{
+  "defaultAssembly": "EasyBlog.Web",
+  "modules": [
+    {
+      "type": "EasyBlog.Web.Core.RepositoryRegistrationModule"
+
+    }
+  ],
+  "components": [
+    {
+      "type": "EasyBlog.Web.Tester",
+      "services": [
+        {
+          "type": "EasyBlog.Web.ITester",
+          "instanceScope": "SingleInstance"
+        }
+      ]
+    },
+    {
+      "type": "EasyBlog.Web.Core.ExtensibilityManager",
+      "services": [
+        {
+          "type": "EasyBlog.Web.Core.IExtensibilityManager",
+          "instanceScope": "singleinstance"
+        }
+      ]
+    },
+    {
+      "type": "EasyBlog.Web.Core.ComponentLocator",
+      "services": [
+        {
+          "type": "EasyBlog.Web.Core.IComponentLocator"
+        }
+      ]
+    }
+  ]
+}

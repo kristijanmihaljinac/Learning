@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Lib.Abstractions;
+using System;
 
 namespace Lib
 {
-    public class Logger
+    public class Logger : ILogger
     {
         public void  Log(string message, params string[] args)
         {

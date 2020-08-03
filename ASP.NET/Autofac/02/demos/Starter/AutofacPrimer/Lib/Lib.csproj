@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstractions\IAvengerRepository.cs" />
+    <Compile Include="Abstractions\ILogger.cs" />
     <Compile Include="AvengerRepository.cs" />
     <Compile Include="Hero.cs" />
     <Compile Include="Logger.cs" />

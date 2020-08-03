@@ -1,6 +1,7 @@
-﻿using Lib;
+﻿using Autofac;
+using Lib;
+using Lib.Abstractions;
 using System;
-using System.Linq;
 
 namespace DevConsole
 {
@@ -9,6 +10,14 @@ namespace DevConsole
         static void Main(string[] args)
         {
             bool exit = false;
+
+            ContainerBuilder builder = new ContainerBuilder();
+            builder.RegisterType<AvengerRepository>().As<IAvengerRepository>();
+            builder.RegisterType<Logger>().As<ILogger>();
+            builder.RegisterType<SuperheroService>();
+            IContainer container = builder.Build();
+            SuperheroService superheroService = container.Resolve<SuperheroService>();
+
             while (!exit)
             {
                 Console.WriteLine("1 - Get all Avengers");
@@ -20,7 +29,7 @@ namespace DevConsole
                 {
                     case "1":
                         {
-                            SuperheroService superheroService = new SuperheroService();
+                          //sam pregleda dependencije i dodjeli ih u konstruktor
 
                             var avengers = superheroService.GetAvengers();
                             Console.WriteLine();
@@ -37,7 +46,7 @@ namespace DevConsole
                             string name = Console.ReadLine();
                             if (!string.IsNullOrWhiteSpace(name))
                             {
-                                SuperheroService superheroService = new SuperheroService();
+                                //SuperheroService superheroService = new SuperheroService();
 
                                 var avenger = superheroService.GetAvenger(name);
                                 if (avenger != null)
