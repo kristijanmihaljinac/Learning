@@ -1,0 +1,3 @@
+Course: https://app.pluralsight.com/library/courses/angularjs-patterns-clean-code/exercise-files
+
+Used materials from: https://github.com/johnpapa/ng-demos (modules and cc-bmean projects)
