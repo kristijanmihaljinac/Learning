@@ -1,0 +1,21 @@
+﻿@model IEnumerable<EasyBlog.Support.Entities.BlogPost>
+@{
+    ViewBag.Title = "Blog Posts";
+}
+
+<div class="jumbotron">
+    <h1>Easy Blog</h1>
+</div>
+
+<div>
+    @foreach (EasyBlog.Support.Entities.BlogPost blogPost in Model)
+    {
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <a href="home/post/@blogPost.BlogPostId">
+                    <span>@blogPost.PostSubject</span>
+                </a>
+            </div>
+        </div>
+    }
+</div>

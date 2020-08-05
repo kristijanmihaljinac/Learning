@@ -1,0 +1,32 @@
+﻿@{
+    var localStrings = DependencyResolver.Current.GetService<EasyBlog.Web.Core.ILocalStrings>();
+}
+@section scripts
+{
+    <script src="@Url.Content("~/App/ViewModels/AdminViewModel.js")" type="text/javascript"></script>
+}
+@section ko_apply
+{
+    var viewModel = new adminViewModel();
+    ko.applyBindings(viewModel, $("#admin")[0]);
+}
+<h2>@localStrings.NewPostTitle</h2>
+
+<div id="admin">
+    <div class="panel panel-primary">
+        <h4 class="panel-heading">New Post</h4>
+        <div class="panel-body">
+            <div class="form-group" style="width: 100%">
+                <p class="control-label">Subject</p>
+                <p><input type="text" class="form-control" data-bind="value: postSubject" /></p>
+                <p class="control-label">Body</p>
+                <p><textarea rows="12" class="form-control" data-bind="value: postBody"></textarea></p>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <input type="button" class="btn btn-primary" value="Submit" data-bind="click: submit" />
+            &nbsp;&nbsp;
+            <span data-bind="text: message"></span>
+        </div>
+    </div>
+</div>

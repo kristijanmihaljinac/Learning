@@ -1,0 +1,17 @@
+{
+  "defaultAssembly": "EasyBlog.Web",
+  "modules": [
+    { "type": "EasyBlog.Web.Core.RepositoryRegistrationModule" }
+  ],
+  "components": [
+    {
+      "type": "EasyBlog.Web.Core.ExtensibilityManager",
+      "services": [
+        {
+          "type": "EasyBlog.Web.Core.IExtensibilityManager",
+          "instanceScope": "singleinstance"
+        }
+      ]
+    }
+  ]
+}

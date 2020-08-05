@@ -1,0 +1,50 @@
+{
+  "defaultAssembly": "EasyBlog.Web",
+  "modules": [
+    { "type": "EasyBlog.Web.Core.RepositoryRegistrationModule" },
+    { "type": "EasyBlog.Web.Core.ExtensibilityRegistrations" }
+  ],
+  "components": [
+    {
+      "type": "EasyBlog.Web.Core.ExtensibilityManager",
+      "services": [
+        {
+          "type": "EasyBlog.Web.Core.IExtensibilityManager",
+          "instanceScope": "singleinstance"
+        }
+      ]
+    },
+    {
+      "type": "EasyBlog.Web.Core.ConfigurationFactory",
+      "services": [
+        {
+          "type": "EasyBlog.Web.Core.IConfigurationFactory"
+        }
+      ]
+    },
+    {
+      "type": "EasyBlog.Web.Core.ComponentLocator",
+      "services": [
+        {
+          "type": "EasyBlog.Web.Core.IComponentLocator"
+        }
+      ]
+    },
+    {
+      "type": "EasyBlog.Web.Core.LocalStrings",
+      "services": [
+        {
+          "type": "EasyBlog.Web.Core.ILocalStrings"
+        }
+      ]
+    },
+    {
+      "type": "EasyBlog.Web.Core.TraceLogger",
+      "services": [
+        {
+          "type": "EasyBlog.Web.Core.ILogger"
+        }
+      ]
+    }
+  ]
+}
