@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'project';
+  activeState = 'recepies';
+  
+
+  onNavigateChange(stateName: string){
+
+    this.activeState = stateName;
+
+    
+
+      
+  }
 }

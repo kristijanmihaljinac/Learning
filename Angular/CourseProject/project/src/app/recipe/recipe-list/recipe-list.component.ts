@@ -8,7 +8,7 @@ import { Recipe } from '../models/recipe.model';
 })
 export class RecipeListComponent implements OnInit {
 
-  recepies: Recipe[] = [
+  recipes: Recipe[] = [
     new Recipe('Test', 'Test desc', 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg')
     
   ];

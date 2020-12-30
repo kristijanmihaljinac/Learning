@@ -1,9 +1,9 @@
-<app-header></app-header>
+<app-header (navigateChange)="onNavigateChange($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recepies></app-recepies>
-      <app-shopping-list></app-shopping-list>
+      <app-recepies *ngIf="activeState === 'recepies'"></app-recepies>
+      <app-shopping-list *ngIf="activeState === 'shoppingList'"></app-shopping-list>
     </div>
   </div>
 </div>
